@@ -17,6 +17,11 @@ public class MainController {
 	@Autowired
 	public MainService service;
 	
+	@GetMapping({"/test"})
+	public String test() throws InterruptedException {
+		return "Hello! I am People Service";
+	}
+	
 	@GetMapping({"/person/{name}"})
 	public String getName(@PathVariable String name) throws InterruptedException {
 		return service.getName(name);
